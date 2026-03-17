@@ -1,1 +1,33 @@
+# Router-on-a-Stick (ROAS) Lab
 
+## Objective
+Configure Router-on-a-Stick (ROAS) with 3 VLANs on a switch.  
+DHCP will be configured on the router.  
+All VLANs must receive IP addresses and successfully ping a server in a different network.
+
+
+## Requirements
+- 2 × Cisco L3 IOU
+- 1 × Cisco L2 IOU
+- 3 × VPC
+- 1 × Tiny Linux Server
+
+## What You Will Do
+- Create 3 VLANs on the switch  
+- Configure trunk between switch and router  
+- Configure ROAS (subinterfaces on router)  
+- Configure DHCP on router  
+- Verify IP assignment for all VLANs  
+- Test connectivity to server network  
+
+## Expected Outcome
+- All VPCs receive correct IP via DHCP  
+- All VLANs can successfully ping the server  
+
+## Lab Files
+- IOU images are available in the provided Google Drive link  
+- Follow the setup guide to import images into PNETLab  
+- Import the `.unl` file into PNETLab to access the solution lab  
+
+## Note
+A complete working solution is available in the lab files for reference.
