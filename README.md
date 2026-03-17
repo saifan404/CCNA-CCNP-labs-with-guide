@@ -15,7 +15,7 @@ Google Drive Link:
 https://drive.google.com/drive/folders/1FIbx3wWwYKLp5z2bwdDG7exJS2eP43L_?usp=drive_link
 Additionally a lot of resources are availabe at https://drive.labhub.eu.org/ 
 
-All the best! (SH.webp)
+All the best! (Misc/SH.webp)
 Note:
 - These images are intended only for lab practice.
 - All the labs are from Jeremy's IT Lab youtube channel https://www.youtube.com/@JeremysITLab
