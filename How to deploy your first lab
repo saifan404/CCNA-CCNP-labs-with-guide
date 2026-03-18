@@ -53,4 +53,42 @@ How to Set Up PNETLab and Import Images
 
 18. Click on "Add Node", select Cisco ASA,
     choose the required number of interfaces, and you're ready to start.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+How to deploy images that are not available on my drive?
+
+1. If you want to import and deploy images that are not available on my drive, you will first need to download the required `.ova` file from the internet and convert it into `.qcow2` format. If you are able to get the `.qcow2` file directly, that is even better. A good starting point to search for the required image is: `https://drive.labhub.eu.org/`
+
+2. To convert the `.ova` file, first upload or paste it into the `/opt/unetlab/temp` folder on your PNETLab VM.
+
+3. Open the CLI on the PNETLab VM and run:
+   `cd /opt/unetlab/temp`
+   Then run:
+   `ls`
+   Make sure the `.ova` file is visible in this directory before proceeding.
+
+4. Extract the `.ova` file by running:
+   `tar -xvf yourfile.ova`
+   This will extract the contents of the `.ova` file and give you a `.vmdk` disk file.
+
+5. Locate the extracted `.vmdk` file in the same folder. Then convert it into `.qcow2` format by running:
+   `qemu-img convert -f vmdk -O qcow2 yourfilein.vmdk virtioa.qcow2`
+   Make sure to use a capital `O` in `-O qcow2`.
+
+6. Once the `.qcow2` file is created, follow the naming guide here:
+   `https://www.eve-ng.net/index.php/documentation/qemu-image-namings/`
+   Rename the `.qcow2` file according to the vendor and platform requirements given in that guide. In most cases, correctly renaming the file is enough.
+
+7. Now go to the following directory:
+   `/opt/unetlab/addons/qemu`
+
+8. Create a new folder for the image. The folder name is very important and must match the expected naming format for that product.
+
+9. To find the correct folder name for your specific vendor or product image, refer to:
+   `https://www.eve-ng.net/index.php/documentation/howtos/`
+
+10. Place the renamed `.qcow2` file inside the correct folder under `/opt/unetlab/addons/qemu`.
+
+11. After copying the file, you can delete the temporary extracted files from `/opt/unetlab/temp` if you no longer need them.
+
+12. Refresh PNETLab and check the node list. The image should now be available as a deployable node.
 
