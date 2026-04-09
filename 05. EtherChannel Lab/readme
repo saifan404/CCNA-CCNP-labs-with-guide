@@ -1,1 +1,48 @@
+# EtherChannel (LACP & PAgP) + ROAS Lab
 
+## Objective
+Configure Layer 2 EtherChannel using both LACP and PAgP between switches and implement Router-on-a-Stick (ROAS) for inter-VLAN routing with DHCP.
+
+This lab is slightly modified from the original setup by replacing the L3 switch with a Layer 3 router.
+
+## Requirements
+- 4 × Cisco L2 IOU Switches  
+- 1 × Cisco L3 Router  
+- VPCs (end hosts as per topology)  
+
+## Lab Overview
+- Configure EtherChannel between switches using:
+  - LACP (IEEE standard)
+  - PAgP (Cisco proprietary)
+- Connect a router to the switch
+- Configure sub-interfaces on the router (ROAS)
+- Configure DHCP on the router
+- Ensure hosts receive IP dynamically and communicate across VLANs
+
+## Topology
+Refer to the **lab topology PNG** available in this folder.
+
+## What You Will Do
+- Configure Layer 2 EtherChannel between A-Switch1 and B-Switch1 using LACP  
+- Configure Layer 2 EtherChannel between A-Switch2 and B-Switch2 using PAgP  
+- Configure trunk links where required  
+- Configure ROAS (sub-interfaces) on the router  
+- Configure DHCP server on the router  
+- Verify VLAN connectivity across EtherChannel links  
+- Check load balancing method on each EtherChannel  
+
+## Expected Outcome
+- EtherChannels are successfully formed (LACP & PAgP)  
+- VLAN traffic is correctly forwarded across aggregated links  
+- End hosts receive IP addresses via DHCP  
+- Inter-VLAN communication works through the router  
+- EtherChannel load balancing is verified  
+
+## Lab Files
+- IOU images are available in the Google Drive link  
+- Follow the setup guide to import images into PNETLab  
+- Import the `.unl` file to load the lab topology  
+
+## Note
+- This lab replaces the L3 switch with a router using ROAS  
+- Refer to the topology PNG and objective PNG for detailed guidance  
